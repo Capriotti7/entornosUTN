@@ -61,4 +61,163 @@ ________________________________________________________________________________
 # <li>zzz</li>
 # </ul>
 
+Crea una lista no ordenada de 3 puntos con los valores: xxx, yyy, zzz.
+
+# <ol>
+# <li>xxx</li>
+# <li>yyy</li>
+# <li>zzz</li>
+# </ol>
+
+Crea una lista ordenada de 3 puntos con los valores: xxx (1), yyy (2), zzz(3).
+
+# <ol>
+# <li>xxx</li>
+# </ol>
+# <ol>
+# <li value="2">yyy</li>
+# </ol>
+# <ol>
+# <li
+# value="3">zzz</li>
+# </ol>
+
+Crea tres listas ordenadas diferentes, las cuales sus valores iniciales van en orden 1 al 3 gracias a la modificacion del valor con el atributo value. Sin la prescencia de este, habrian tres listas todas con valor inicial 1.
+
+# <blockquote>
+# <p>1. xxx<br />
+# 2. yyy<br />
+# 3. zzz</p>
+# </blockquote>
+
+Crea una cita en bloque (usado para citar texto proveniente de otras fuentes), definiendo en este un parrafo el cual simula ser una lista ordenada con los indices 1. , 2. , 3. y usando br como salto de linea para dar ese efecto.
+
+______________________________________________________________________________________________________________________
+
+3.d)
+
+<table border="1" width="300">
+<tr>
+<th>Columna 1</th>
+<th>Columna 2</th>
+</tr>
+<tr>
+<td>Celda 1</td>
+<td>Celda 2</td>
+</tr>
+<tr>
+<td>Celda 3</td>
+<td>Celda 4</td>
+</tr>
+</table>
+
+Este pedazo de codigo crea una tabla la cual cuenta con un borde de 1 pixel al rededor de la tabla, con un ancho de tabla de 300 pixeles.
+Usa tr para definir filas en la tabla y th para definir un encabezado en negrita y centrado.
+Usa td para definir los datos que van en la tabla.
+
+<table border="1" width="300">
+<tr>
+<td><div align="center"><strong>Colum
+na1</strong></div></td>
+<td><div align="center"><strong>Columna
+2</strong></div></td>
+</tr>
+<tr>
+<td>Celda 1</td>
+<td>Celda 2</td>
+</tr>
+<tr>
+<td>Celda 3</td>
+<td>Celda 4</td>
+</tr>
+</table>
+
+Este pedazo de codigo se asemeja al anterior, pero la unica diferencia es que no tiene encabezados en cada columna, si no que simula unos usando div alineados al centro y poniendo en negrita los nombres de las columnas.
+
+3.e)
+
+<table width="200">
+<caption>
+Título
+</caption>
+<tr>
+<td bgcolor="#dddddd">&nbsp;</td>
+<td bgcolor="#dddddd">&nbsp;</td>
+<td bgcolor="#dddddd">&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#dddddd">&nbsp;</td>
+<td bgcolor="#dddddd">
+&nbsp;</td>
+<td bgcolor="#dddddd">&nbsp;</td>
+</tr>
+</table>
+
+En este codigo se define una tabla de 200 pixeles de ancho con un tìtulo de tabla. 
+Se definen tres columnas en una tabla.
+Las celdas son definidas con el td, el cual tiene un color de fondo gris, y con un texto el cual html usa para dejar un espacio vacio.
+
+<table width="200">
+                <tr>
+                <td colspan="3"><div
+                align="center">Título</div></td>
+                </tr>
+                <tr>
+                <td bgcolor="#dddddd">&nbsp;</td>
+                <td bgcolor="#dddddd">&nbsp;</td>
+                <td bgcolor="#dddddd">&nbsp;</td>
+                </tr>
+                <tr>
+                <td bgcolor="#dddddd">&nbsp;</td>
+                <td bgcolor="#dddddd">&nbsp;</td>
+                <td bgcolor="#dddddd">&nbsp;</td>
+                </tr>
+                </table>
+
+Este codigo tiene un resultado similar al anterior, solo que lo logra de manera diferente.
+Se definen tres columnas en una tabla.
+Para el titulo en vez de usar la tag caption, se usa un atributo colspan en el td (el cual define celdas), este lo que hace es juntar las tres filas de una celda y con un div alineado al centro simula el titulo del caption.
+En cuanto a las celdas siguientes, es lo mismo que la tabla anterior.
+
+______________________________________________________________________________________________________________________
+
+3.f)
+
+ <table width="200">
+        <tr>
+        <td colspan="3"><div
+        align="center">Título</div></td>
+        </tr>
+        <tr>
+        <td rowspan="2" bgcolor="#dddddd">&nbsp;</td>
+        <td bgcolor="#dddddd">&nbsp;</td>
+        <td bgcolor="#dddddd">&nbsp;</td>
+        </tr>
+        <tr>
+        <td bgcolor="#dddddd">&nbsp;</td>
+        <td bgcolor="#dddddd">&nbsp;</td>
+        </tr>
+        </table>
+
+Es similar al ejercicio 3.e, ya que crea una tabla con tres columnas y dos filas, ambas con un fondo gris y un texto que simula ser nulo en estas, solo que en este codigo la primera fila abarca dos columnas verticlaes, ocupando toda la primera columna.
+
+ <table width="200">
+            <tr>
+            <td colspan="3"><div
+            align="center">Título</div></td>
+            </tr>
+            <tr>
+            <td colspan="2"
+            bgcolor="#dddddd">&nbsp;</td>
+            <td bgcolor="#dddddd">&nbsp;</td>
+            </tr>
+            <tr>
+            <td bgcolor="#dddddd">&nbsp;</td>
+            <td bgcolor="#dddddd">&nbsp;</td>
+            <td bgcolor="#dddddd">&nbsp;</td>
+            </tr>
+            </table>
+
+Es similar a la anterior, solo que en este codigo la primera celda abarca dos columnas horizontales ocupando las dos primeras columnas de la fila.
+
 
