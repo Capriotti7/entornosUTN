@@ -1,0 +1,62 @@
+<form id="form1" name="form1" action="procesar.php" method="post" target="_blank">
+    <fieldset>
+    <legend>LOGIN</legend>
+    Usuario: <input type="text" id="usu1" name="usu1" value="xxx" /><br />
+    Clave: <input type="password" id="clave1" name="clave1" value="xxx" />
+    </fieldset>
+    <input type="submit" id="boton1" name="boton1" value="Enviar" />
+</form>
+
+<!--primer segmento de codigo
+Se envía a procesar.php y puede abrir la respuesta en una nueva ventana. 
+Los campos de texto y contraseña ya se encuentran completos con "xxx".
+-->
+
+
+<form id="form2" name="form2" action="" method="get" target="_blank">
+    LOGIN<br />
+    <label>Usuario: <input type="text" id="usu2" name="usu2" /></label><br />
+    <label>Clave: <input type="text" id="clave2" name="clave2" /></label><br />
+    <input type="submit" id="boton2" name="boton2" value="Enviar" />
+</form>
+
+<!--segundo segmento de codigo
+Se envía utilizando el método get, es decir que los datos se verán en la URL, 
+y abre la respuesta en una nueva ventana. Los campos están vacíos y la contraseña no está protegida.
+-->
+
+<form id="form3" name="form3" action="mailto:xx@xx.com” enctype=text/plain method="post" target="_blank">
+    <fieldset>
+    <legend>LOGIN</legend>
+    Usuario: <input type="text" id="usu3" name="usu3" /><br />
+    Clave: <input type="password" id="clave3" name="clave3" />
+    </fieldset>
+    <input type="reset" id="boton3" name="boton3" value=
+    "Enviar" />
+</form>
+
+
+<!--tercer segmento de codigo
+Intenta enviar los datos a una dirección de correo electrónico utilizando 'mailto' en formato
+de texto plano y abre la respuesta en una nueva ventana. 
+Los campos están vacíos y la contraseña está oculta, pero utiliza un botón de reset.
+-->
+
+
+<!--diferencias: 
+
+1. Para enviar, el primer formulario utiliza post al igual que el tercero pero el segundo en cambio, usa get.
+2. En el primer formulario los datos se envían a procesar.php., en el segundo se envían a la misma página 
+(acción no especificada). y en el tercero, los datos se envían a una dirección de correo electrónico.
+3. en el primer formulario los campos de usuario y contraseña tienen valores predeterminados de "xxx", en cambio en 
+en segundo y tercer formulario los campos no tienen valores predeterminados.
+4. en el segundo formulario el campo de clave es un texto normal (no protegido).
+y en primer y tercer formulario es de tipo password (oculto).
+5. el primer y segundo formularios utilizan un botón de submit, en cambio el tercero utiliza un botón de reset
+con la etiqueta "Enviar".
+Uso de fieldset y legend:
+6. el primer y tercer formularios usan fieldset para agrupar campos relacionados y un legend con el texto "LOGIN".
+el segundo formulario no utiliza fieldset ni legend.
+
+-->
+    

@@ -1,0 +1,42 @@
+<select name="lista">
+    <optgroup label="Caso 1">
+    <option>Mayo</option>
+    <option>Junio</option>
+    </optgroup>
+    <optgroup label="Caso 2">
+    <option>Mayo</option>
+    <option>Junio</option>
+    </optgroup>
+</select>
+
+<!-- primer segmento de codigo 
+ el usuario solo podrá elegir una opción entre "Mayo" y "Junio".
+-->
+    
+
+
+<select name="lista[]" multiple="multiple">
+        <optgroup label=" Caso 1">
+        <option>Mayo</option>
+        <option>Junio</option>
+        </optgroup>
+        <optgroup label=" Caso 2">
+        <option>Mayo</option>
+        <option>Junio</option>
+        </optgroup>
+</select>
+        
+<!-- segundo segmento de codigo 
+ el usuario puede seleccionar múltiples opciones, incluso seleccionando "Mayo" y "Junio" al mismo tiempo.
+-->
+
+<!-- diferencias: 
+
+1. El primer segmento no tiene el atributo multiple, por lo que solo permite seleccionar una opción a la vez, 
+en cambio el segundo incluye el atributo multiple="multiple".
+
+2. En el primer caso las opciones están organizadas en dos grupos: "Caso 1" con una opción ("Mayo") y "Caso 2" con otra opción ("Junio").
+en cambio en el segundo, dentro de cada <optgroup>, hay dos opciones: "Mayo" y "Junio". 
+Es decir, que tanto "Mayo" como "Junio" aparecen en ambos grupos ("Caso 1" y "Caso 2").
+
+-->
