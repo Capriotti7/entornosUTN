@@ -20,7 +20,7 @@ if (is_string($a)) { //funcion is_string para determinar si la variable es una c
 $d = $a ? ++$d : $d*3; 
 $f = doble($d++);
 $g = $f += 10;
-echo $a, $b, $c, $d, $f , $g; //la salida muetsra: 1, xyz, xyz, 17, 34, 44
+echo $a, $b, $c, $d, $f , $g; //la salida muetsra: 1, xyz, xyz, 18, 44, 44
 ?>
 
 <!-- operadores: 
