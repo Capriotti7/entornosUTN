@@ -1,0 +1,1 @@
+Al principio el codigo dara un error ya que las variables $flor y $color no estan definidas, al incluir el archivo, el codigo mostrara: "El clavel blanco"
