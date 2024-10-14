@@ -1,0 +1,19 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recomendar el Sitio</title>
+</head>
+<body>
+    <h1>Recomienda nuestro sitio a un amigo</h1>
+    <form action="procesar_recomendacion.php" method="POST">
+        <label for="nombre">Tu Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+
+        <label for="email_amigo">Correo de tu Amigo:</label><br>
+        <input type="email" id="email_amigo" name="email_amigo" required><br><br>
+
+        <input type="submit" value="Recomendar">
+    </form>
+</body>
+</html>
