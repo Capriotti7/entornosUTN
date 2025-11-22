@@ -1,3 +1,9 @@
+<?php
+// Si la sesión no está iniciada, la iniciamos para poder leer las variables
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -38,12 +44,31 @@
 
         <!-- Sección Derecha (Login/Notificaciones) -->
         <div class="d-flex align-items-center">
-          <!-- Lógica PHP: Si NO está logueado -->
-          <a href="login.php" class="btn btn-outline-primary me-2">INICIAR SESION</a>
+          <?php if (isset($_SESSION['usuario'])): ?>
+            <!-- SI ESTÁ LOGUEADO -->
+            <div class="dropdown me-3">
+              <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                Hola, <?php echo $_SESSION['nombre_usuario']; ?>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="perfil.php">Mi Perfil</a></li>
+                <?php if ($_SESSION['rol'] == 'admin'): ?>
+                  <li><a class="dropdown-item fw-bold" href="panel_admin.php">Panel de Administración</a></li>
+                <?php endif; ?>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item text-danger" href="php/cerrar_sesion.php">Cerrar Sesión</a></li>
+              </ul>
+            </div>
+          <?php else: ?>
+            <!-- SI NO ESTÁ LOGUEADO -->
+            <a href="login.php" class="btn btn-outline-primary me-2">INICIAR SESION</a>
+            <a href="registro.php" class="btn btn-outline-primary me-2">REGISTRARTE</a>
+          <?php endif; ?>
 
           <!-- Iconos -->
           <a href="#" class="text-dark me-3 fs-4"><i class="bi bi-bell"></i></a>
-          <a href="#" class="text-dark fs-4"><i class="bi bi-person-circle"></i></a>
         </div>
       </div>
     </div>
