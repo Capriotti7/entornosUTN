@@ -6,7 +6,14 @@ include '../includes/conexion.php';
 $nombre = $_POST['nombre'];
 $email = $_POST['email'];
 $password = $_POST['password'];
-$rol = 'cliente'; // Por defecto, todos son clientes al registrarse
+
+// CAPTURAR EL ROL DEL FORMULARIO (Cliente o Dueño) - IMPORTANTE PARA DEFINIR PERMISOS EN EL SISTEMA
+$rol = $_POST['rol']; 
+
+// Pequeña validación de seguridad extra por si alguien altera el HTML
+if($rol != 'cliente' && $rol != 'dueno') {
+    $rol = 'cliente';
+}
 
 // 3. Encriptar la contraseña (SEGURIDAD)
 $password_encriptada = password_hash($password, PASSWORD_DEFAULT);
@@ -35,14 +42,14 @@ $ejecutar = mysqli_query($con, $query);
 if ($ejecutar) {
   echo '
         <script>
-            alert("Usuario almacenado exitosamente.");
+            alert("Cuenta creada exitosamente. ¡Ya podés iniciar sesión!");
             window.location = "../login.php"; // Redirigir al Login
         </script>
     ';
 } else {
   echo '
         <script>
-            alert("Error al almacenar usuario.");
+            alert("Error al crear la cuenta. Intentalo de nuevo.");
             window.location = "../registro.php";
         </script>
     ';
@@ -50,3 +57,4 @@ if ($ejecutar) {
 
 // Cerrar conexión
 mysqli_close($con);
+?>

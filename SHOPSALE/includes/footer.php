@@ -1,20 +1,41 @@
 </div> <!-- Fin del container principal -->
 
 <!-- FOOTER -->
-<footer class="bg-white border-top mt-5 py-4">
+<footer class="bg-dark text-light py-5 mt-5 shadow-lg">
   <div class="container">
-    <div class="row">
-      <div class="col-md-4 border-end">
-        <h5>Contacto</h5>
-        <p>Email: nuestroemail@gmail.com<br>Tel: 341 000 4444</p>
+    <div class="row text-center text-md-start">
+      
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h5 class="text-uppercase text-warning mb-3 fw-bold">Contacto</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2 bi bi-geo-alt">  Rosario, Santa Fe</li>
+          <li class="mb-2 bi bi-envelope">  helpshopsale@gmail.com</li>
+          <li class="mb-2 bi bi-telephone">  +54 9 341 3674679</li>
+        </ul>
       </div>
-      <div class="col-md-4 border-end">
-        <h5>Política de privacidad</h5>
-        <a href="#">Enlace</a>
+      
+      <div class="col-md-4 mb-4 mb-md-0 d-flex flex-column align-items-md-center">
+        <h5 class="text-uppercase text-warning mb-3 fw-bold">Legal</h5>
+        <ul class="list-unstyled text-md-center">
+          <li class="mb-2"><a href="#" class="text-light text-decoration-none border-bottom border-secondary pb-1 custom-hover">Política de privacidad</a></li>
+          <li class="mb-2"><a href="#" class="text-light text-decoration-none border-bottom border-secondary pb-1 custom-hover">Términos y Servicios</a></li>
+        </ul>
       </div>
+      
       <div class="col-md-4">
-        <h5>Horarios</h5>
-        <p>Lunes a Viernes - 8:00 a 21:00hs<br>Sábados - 12:00 a 21:00hs</p>
+        <h5 class="text-uppercase text-warning mb-3 fw-bold">Horarios</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2">Lunes a Viernes: 8:00hs a 21:00hs</li>
+          <li class="mb-2">Sábados y Domingos: 12:00hs a 21:00hs</li>
+        </ul>
+      </div>
+      
+    </div>
+    
+    <hr class="mt-4 mb-3 border-secondary">
+    <div class="row">
+      <div class="col-12 text-center">
+        <small>© 2026 SHOPSALE - Todos los derechos reservados.</small>
       </div>
     </div>
   </div>
