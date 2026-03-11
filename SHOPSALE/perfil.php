@@ -2,7 +2,7 @@
 include('includes/header.php'); 
 include('includes/conexion.php');
 
-// Seguridad: Si no está logueado, lo mandamos al login
+// Si no está logueado, lo mandamos al login
 if(!isset($_SESSION['usuario'])){
     header("location: login.php");
     exit;

@@ -11,14 +11,18 @@
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img src="assets/img/banner1.jpg" class="d-block w-100" alt="Banner 1" style="height: 450px; object-fit: cover;">
+        <div class="carousel-caption d-none d-md-block rounded p-3">
         </div>
       </div>
       <div class="carousel-item">
         <img src="assets/img/banner2.jpg" class="d-block w-100" alt="Banner 2" style="height: 450px; object-fit: cover;">
+        <div class="carousel-caption d-none d-md-block rounded p-3">
         </div>
       </div>
       <div class="carousel-item">
         <img src="assets/img/banner3.jpg" class="d-block w-100" alt="Banner 3" style="height: 450px; object-fit: cover;">
+        <div class="carousel-caption d-none d-md-block rounded p-3">
+        </div>
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselPrincipal" data-bs-slide="prev">
@@ -30,82 +34,50 @@
   </div>
 </div>
 
-<div class="container mb-5 pb-4 border-bottom">
+<div class="container mb-5">
   <div class="text-center mb-5">
     <h2 class="fw-bold"><i class="bi bi-star-fill text-warning me-2"></i> Últimas Promociones</h2>
+    <p class="text-muted">Aprovechá estas ofertas exclusivas para vos.</p>
   </div>
   
   <div class="row g-4 justify-content-center">
     <?php
-    // Aseguramos que la conexión exista para no tirar error
     if(isset($con)) {
+        $fecha_hoy = date('Y-m-d');
+        
+        // SQL CORREGIDO: Solo aprobadas y que la fecha de hoy esté dentro del rango
         $sql = "SELECT p.*, l.nombre as nombre_local 
                 FROM promociones p 
                 INNER JOIN locales l ON p.id_local = l.id 
                 WHERE p.estado = 'aprobada' 
+                AND '$fecha_hoy' >= p.fecha_inicio 
+                AND '$fecha_hoy' <= p.fecha_fin
                 ORDER BY p.id DESC LIMIT 3";
+                
         $res = mysqli_query($con, $sql);
 
         if ($res && mysqli_num_rows($res) > 0) {
           while ($row = mysqli_fetch_assoc($res)) {
     ?>
             <div class="col-md-4">
-              <div class="card text-center h-100 shadow-sm border-0 border-top border-warning border-3">
+              <div class="card text-center h-100 shadow-sm border-0 border-top border-warning border-3 rounded-4">
                 <div class="card-body d-flex flex-column p-4">
-                  <h6 class="text-muted text-uppercase small fw-bold mb-1"><?php echo $row['nombre_local']; ?></h6>
-                  <h4 class="card-title fw-bold text-dark mb-3"><?php echo $row['titulo']; ?></h4>
-                  <p class="card-text text-muted flex-grow-1"><?php echo $row['descripcion_breve']; ?></p>
-                  <a href="promociones.php" class="btn btn-outline-dark mt-auto w-100 rounded-pill">Ver Detalle</a>
+                  <h6 class="text-muted text-uppercase small fw-bold mb-1"><?php echo htmlspecialchars($row['nombre_local']); ?></h6>
+                  <h4 class="card-title fw-bold text-dark mb-3"><?php echo htmlspecialchars($row['titulo']); ?></h4>
+                  <p class="card-text text-muted flex-grow-1"><?php echo htmlspecialchars($row['descripcion_breve']); ?></p>
+                  <a href="promociones.php" class="btn btn-outline-dark mt-auto w-100 rounded-pill fw-semibold">Ver Detalle</a>
                 </div>
               </div>
             </div>
     <?php
           }
         } else {
-          echo "<div class='col-12'><p class='text-center text-muted'>Aún no hay promociones destacadas en este momento.</p></div>";
+          echo "<div class='col-12'><p class='text-center text-muted'>Aún no hay promociones activas en este momento.</p></div>";
         }
-    } else {
-        echo "<div class='col-12'><p class='text-center text-danger'>Error: Falta configurar el archivo conexion.php</p></div>";
     }
     ?>
   </div>
 </div>
-
-<div class="container mb-5">
-  <div class="row g-4 justify-content-center">
-    <div class="col-md-4">
-      <div class="card h-100 shadow-sm border-0 bg-white hover-zoom">
-        <div class="card-body d-flex flex-column text-center p-4">
-          <div class="display-5 text-warning mb-3"><i class="bi bi-shop"></i></div>
-          <h4 class="card-title fw-bold mb-3">Locales</h4>
-          <p class="card-text text-muted flex-grow-1">Explorá todas nuestras tiendas por rubro y descubrí tus favoritas.</p>
-          <a href="locales.php" class="btn btn-dark mt-auto rounded-pill">Ver Locales</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-4">
-      <div class="card h-100 shadow-sm border-0 bg-white hover-zoom">
-        <div class="card-body d-flex flex-column text-center p-4">
-          <div class="display-5 text-warning mb-3"><i class="bi bi-newspaper"></i></div>
-          <h4 class="card-title fw-bold mb-3">Noticias</h4>
-          <p class="card-text text-muted flex-grow-1">Enterate de los últimos eventos y aperturas exclusivas en el shopping.</p>
-          <a href="noticias.php" class="btn btn-dark mt-auto rounded-pill">Ver Noticias</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-4">
-      <div class="card h-100 shadow-sm border-0 bg-white hover-zoom">
-        <div class="card-body d-flex flex-column text-center p-4">
-          <div class="display-5 text-warning mb-3"><i class="bi bi-envelope"></i></div>
-          <h4 class="card-title fw-bold mb-3">Contacto</h4>
-          <p class="card-text text-muted flex-grow-1">¿Tenés dudas o sugerencias? Escribinos y nos pondremos en contacto.</p>
-          <a href="contacto.php" class="btn btn-dark mt-auto rounded-pill">Contactarnos</a>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
 
 <?php include('includes/footer.php'); ?>

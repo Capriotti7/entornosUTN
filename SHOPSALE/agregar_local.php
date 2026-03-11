@@ -1,7 +1,7 @@
 <?php
 include('includes/header.php');
 
-// Verificar si es administrador (Seguridad)
+// Verificar si es admin
 if (!isset($_SESSION['rol']) || $_SESSION['rol'] != 'admin') {
   header("location: index.php");
   exit;
@@ -47,13 +47,12 @@ if (!isset($_SESSION['rol']) || $_SESSION['rol'] != 'admin') {
           <input type="file" class="form-control" name="imagen" accept="image/*" required>
         </div>
 
-        <!-- Asignar Dueño: Aquí cargamos los usuarios desde la BD -->
         <div class="mb-3">
           <label class="form-label">Dueño Encargado</label>
           <select class="form-select" name="id_usuario" required>
             <option value="" selected disabled>Seleccione un dueño...</option>
             <?php
-            // Traemos todos los usuarios para elegir quién es el dueño
+
             include('includes/conexion.php');
             $sql = "SELECT id, nombre, email FROM usuarios";
             $resultado = mysqli_query($con, $sql);
