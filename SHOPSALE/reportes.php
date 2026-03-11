@@ -47,9 +47,9 @@ $total_usos = mysqli_fetch_assoc($res_total)['total_usos'];
         <div class="col-md-6 col-lg-4">
             <div class="card shadow-sm border-0 rounded-4 text-center border-bottom border-warning border-4 bg-dark text-white">
                 <div class="card-body p-4">
-                    <h5 class="text-muted text-uppercase mb-3"><i class="bi bi-ticket-perforated me-2 text-warning"></i>Descuentos Aplicados</h5>
+                    <h5 class="text-uppercase mb-3"><i class="bi bi-ticket-perforated me-2 text-warning"></i>Descuentos Aplicados</h5>
                     <h1 class="display-3 fw-bold mb-0"><?php echo $total_usos; ?></h1>
-                    <p class="small text-muted mt-2">Promociones aceptadas con éxito</p>
+                    <p class="small mt-2">Promociones aceptadas con éxito</p>
                 </div>
             </div>
         </div>
