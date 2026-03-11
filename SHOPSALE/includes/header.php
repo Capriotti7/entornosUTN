@@ -54,10 +54,12 @@ if (session_status() == PHP_SESSION_NONE) {
                   <li><a class="dropdown-item" href="agregar_local.php"><i class="bi bi-plus-circle me-1"></i> Crear Local</a></li>
                   <li><a class="dropdown-item" href="agregar_promocion.php"><i class="bi bi-tag me-1"></i> Crear Promoción</a></li>
                   <li><a class="dropdown-item" href="gestionar_solicitudes.php"><i class="bi bi-ticket-detailed me-1"></i> Gestionar Solicitudes</a></li>
+                  <li><a class="dropdown-item" href="reportes.php"><i class="bi bi-graph-up-arrow me-1"></i> Ver Reportes</a></li>
           <?php endif; ?>
                 <?php if ($_SESSION['rol'] == 'admin'): ?>
                   <li><a class="dropdown-item fw-bold" href="panel_admin.php">Panel de Administración</a></li>
                   <li><a class="dropdown-item" href="agregar_noticia.php"><i class="bi bi-newspaper me-1"></i> Publicar Noticia</a></li>
+                  <li><a class="dropdown-item" href="reportes.php"><i class="bi bi-graph-up-arrow me-1"></i> Ver Reportes</a></li>
                 <?php endif; ?>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item text-danger" href="php/cerrar_sesion.php"><i class="bi bi-box-arrow-right me-1"></i> Cerrar Sesión</a></li>
